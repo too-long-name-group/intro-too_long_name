@@ -1,0 +1,14 @@
+---
+import { Picture } from "astro:assets";
+
+import HorizonBackground from "../assets/image/background-horizon-4k.png";
+// import VerticalBackground from "../assets/image/background-vertical.png";
+---
+
+<Picture
+  alt="背景图片"
+  formats={["avif", "webp"]}
+  loading="eager"
+  src={HorizonBackground}
+  class="h-screen w-screen absolute top-0 -z-30 object-cover blur-sm brightness-50"
+/>

@@ -1,0 +1,24 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  icon: string;
+  color?: string;
+  newWindow?: boolean;
+  text: string;
+  href: string;
+}
+
+const { icon, color, text, newWindow = true, href } = Astro.props;
+
+const target = newWindow ? "_blank" : "_self";
+---
+
+<a
+  href={href}
+  target={target}
+  class="grid grid-flow-col items-center gap-x-2 py-2 px-3 rounded-full backdrop-blur-xl bg-[#2C3D48]/20"
+>
+  <Icon class="size-8 text-gray-200" name={icon} class:list={color} />
+  <span class="text-gray-200">{text}</span>
+</a>
