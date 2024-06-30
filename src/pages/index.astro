@@ -1,77 +1,45 @@
 ---
-import Avatar from "../components/Avatar.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import IconLink from "../components/IconLink.astro";
-import TextLink from "../components/TextLink.astro";
 ---
 
 <BaseLayout>
-  <main
-    class="main min-h-screen w-fit mx-auto flex flex-col justify-center items-center"
-  >
-    <div
-      class="intro grid md:grid-flow-col grid-flow-row auto-cols-max items-center"
-    >
-      <Avatar />
-
-      <div class="md:mx-8 md:text-left text-center">
-        <h1
-          class="nickname lg:text-8xl md:text-6xl text-4xl text-[#F9B248] my-6"
-        >
-          too_long_name
-        </h1>
-        <div
-          class="tags max-w-[90vw] overflow-x-scroll text-nowrap"
-          style="scrollbar-width: none;"
-        >
-          <TextLink text="# Furry" /> /
-          <TextLink text="# Developer" /> /
-          <TextLink text="# Gamer" /> /
-          <TextLink text="# 🏳️‍🌈" /> /
-          <TextLink text="And more ……" />
-        </div>
-      </div>
-    </div>
-
-    <hr class="w-full my-8" />
-
-    <div class="flex flex-row flex-wrap justify-center gap-2">
-      <IconLink
-        icon="mdi:steam"
-        href="https://steamcommunity.com/id/too_long_name/"
-        text="Steam"
-      />
-      <IconLink
-        icon="ant-design:qq-circle-filled"
-        href="/qq"
-        text="QQ"
-        newWindow={false}
-      />
-      <IconLink
-        icon="ant-design:bilibili-filled"
-        href="https://space.bilibili.com/4283693"
-        text="哔哩哔哩"
-      />
-      <IconLink
-        icon="fa6-brands:x-twitter"
-        href="https://x.com/too__long__name"
-        text="X / Twitter"
-      />
-      <IconLink
-        icon="mdi:gitlab"
-        href="https://gitlab.com/too_long_name"
-        text="Gitlab"
-      />
-      <IconLink
-        icon="fa6-brands:telegram"
-        href="https://t.me/too_long_name"
-        text="Telegram"
-      />
-      <IconLink
-        icon="mdi:email"
-        href="mailto:mail@too-long-name.io"
-        text="E-Mail"
-      />
-    </div>
-  </main>
+  <div id="links" class="flex flex-row flex-wrap justify-center gap-2">
+    <IconLink
+      icon="mdi:steam"
+      href="https://steamcommunity.com/id/too_long_name/"
+      text="Steam"
+    />
+    <IconLink
+      icon="ant-design:qq-circle-filled"
+      href="/qq"
+      text="QQ"
+      newWindow={false}
+    />
+    <IconLink
+      icon="ant-design:bilibili-filled"
+      href="https://space.bilibili.com/4283693"
+      text="哔哩哔哩"
+    />
+    <IconLink
+      icon="fa6-brands:x-twitter"
+      href="https://x.com/too__long__name"
+      text="X / Twitter"
+    />
+    <IconLink
+      icon="mdi:gitlab"
+      href="https://gitlab.com/too_long_name"
+      text="GitLab"
+    />
+    <IconLink
+      icon="fa6-brands:telegram"
+      href="https://t.me/too_long_name"
+      text="Telegram"
+    />
+    <IconLink
+      icon="mdi:email"
+      href="mailto:mail@too-long-name.io"
+      text="E-Mail"
+    />
+  </div>
 </BaseLayout>

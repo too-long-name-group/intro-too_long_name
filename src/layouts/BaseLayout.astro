@@ -3,10 +3,14 @@ interface Props {
   title?: string;
 }
 
-import { NAME, SITE_TITLE_DEFAULT, SITE_DESCRIPTION } from "../consts";
+import { ViewTransitions } from "astro:transitions";
 
-import Avatar from "../assets/image/avatar.png";
+import { SITE_TITLE_DEFAULT } from "../consts";
+
+import Avatar from "../components/Avatar.astro";
 import Background from "../components/Background.astro";
+import Meta from "../components/Meta.astro";
+import Tag from "../components/Tag.astro";
 
 const { title = SITE_TITLE_DEFAULT } = Astro.props;
 ---
@@ -16,34 +20,43 @@ const { title = SITE_TITLE_DEFAULT } = Astro.props;
   <head>
     <title>{title}</title>
 
-    <!-- Global Metadata -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content={Astro.generator} />
+    <Meta />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
-    <meta property="og:title" content={"@" + NAME} />
-    <meta property="og:description" content={SITE_DESCRIPTION} />
-    <meta property="og:image" content={new URL(Avatar.src, Astro.url)} />
-    <meta property="og:image:alt" content={NAME + " avatar"} />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary" />
-    <meta property="twitter:url" content={Astro.url} />
-    <meta property="twitter:title" content={"@" + NAME} />
-    <meta property="twitter:description" content={SITE_DESCRIPTION} />
-    <meta property="twitter:image" content={new URL(Avatar.src, Astro.url)} />
-    <meta property="twitter:image:alt" content={NAME + " avatar"} />
+    <ViewTransitions />
   </head>
-  <body>
-    <div
-      class="z-30 relative max-h-screen overflow-y-scroll"
+  <body class="bg-[#1F2935]">
+    <main
+      class="relative max-h-dvh min-h-dvh overflow-y-scroll p-8 xl:pt-48 lg:pt-32 md:pt-16 w-fit flex flex-col mx-auto"
       style="scrollbar-width: none;"
     >
+      <div
+        id="intro"
+        class="grid md:grid-flow-col grid-flow-row items-center gap-8 md:text-left text-center flex-initial"
+      >
+        <Avatar />
+        <div id="info" class="space-y-6">
+          <h1
+            id="name"
+            class="text-[#F9B248] xl:text-8xl lg:text-7xl md:text-6xl text-4xl"
+          >
+            too_long_name
+          </h1>
+          <ul id="tags">
+            <li class="inline-block"><Tag text="Furry" /></li>
+            <li class="inline-block"><Tag text="Developer" /></li>
+            <li class="inline-block"><Tag text="Gamer" /></li>
+            <li class="inline-block"><Tag text="🏳️‍🌈" /></li>
+            <li class="inline-block">
+              <Tag text="And more ……" last topic={false} />
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="width-full border-b-2 my-8"></div>
+
       <slot />
-    </div>
+    </main>
 
     <Background />
   </body>

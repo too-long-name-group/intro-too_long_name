@@ -1,0 +1,28 @@
+---
+interface Props {
+  text: string;
+  href?: string;
+  last?: boolean;
+  topic?: boolean;
+}
+const { text, href, last = false, topic = true } = Astro.props;
+---
+
+<div
+  class="text-[#E8D5B7] lg:text-2xl md:text-base text-base"
+  class:list={[{ "before:content-['#']": topic }]}
+>
+  {
+    href ? (
+      <a href={href} class="inline-block">
+        <span class=" underline decoration-2 decoration-dashed ">{text}</span>
+      </a>
+    ) : (
+      <p class="inline-block">
+        <span class="">{text}</span>
+      </p>
+    )
+  }
+
+  {!last && <span>/</span>}
+</div>

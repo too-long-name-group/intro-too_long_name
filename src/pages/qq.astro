@@ -1,50 +1,36 @@
 ---
 import { Picture } from "astro:assets";
 
-import QRCode from "../assets/image/qq-qrcode.jpg";
+import BaseLayout2 from "../layouts/BaseLayout.astro";
 
-import BaseLayout from "../layouts/BaseLayout.astro";
+import QRCode from "../assets/image/qq-qrcode-small-transparent.png";
 ---
 
-<BaseLayout>
-  <div class="flex justify-center items-center h-screen">
+<BaseLayout2>
+  <div
+    class="flex md:flex-row flex-col-reverse justify-around items-center gap-4"
+  >
     <Picture
+      id="qq-qrcode"
       src={QRCode}
       formats={["avif", "webp"]}
       alt="添加 QQ 二维码"
       loading="eager"
-      class="h-[90vh] object-contain"
+      class="max-w-80 rounded-xl backdrop-blur-sm bg-black/30"
     />
-  </div>
-
-  /*
-  <dialog
-    id="dialog"
-    class="absolute flex flex-col justify-center gap-8 h-screen w-screen text-center backdrop-blur-xl bg-[#2C3D48]/20"
-  >
-    <h1 class="text-2xl text-[#E8D5B7]">即将尝试跳转至 QQ 是否继续？</h1>
-    <div class="btn-group">
-      <button
-        class="px-4 py-2 rounded-md bg-[#F9B248] hover:shadow-lg shadow-[#F9B248]/40"
+    <div class="grid gap-4">
+      <h1
+        id="qq-number"
+        class="text-zinc-200 xl:text-6xl lg:text-5xl md:text-4xl text-2xl before:content-['QQ:']"
       >
-        跳</button
+        3757984495
+      </h1>
+      <a
+        class="p-4 text-gray-200 text-center rounded-full backdrop-blur-xl bg-[#2C3D48]/20"
+        href="https://qm.qq.com/q/HDweCbQ8cA"
       >
-      <button
-        class="px-4 py-2 rounded-md bg-[#F9B248] hover:shadow-lg shadow-[#F9B248]/50"
-      >
-        不跳</button
+        点我跳转到 QQ</a
       >
     </div>
-  </dialog>
-  */
-</BaseLayout>
-
-<script>
-  // const dialog = document.querySelector("#dialog");
-
-  window.addEventListener("load", () => {
-    // dialog.showModal();
-
-    window.open("https://qm.qq.com/q/HDweCbQ8cA");
-  });
-</script>
+  </div>
+</BaseLayout2>

@@ -1,0 +1,30 @@
+---
+import { NAME, SITE_DESCRIPTION } from "../consts";
+
+import Avatar from "../assets/image/avatar.png";
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+<!-- Global Metadata -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={"@" + NAME} />
+<meta property="og:description" content={SITE_DESCRIPTION} />
+<meta property="og:image" content={new URL(Avatar.src, Astro.url)} />
+<meta property="og:image:alt" content={NAME + " avatar"} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={"@" + NAME} />
+<meta property="twitter:description" content={SITE_DESCRIPTION} />
+<meta property="twitter:image" content={new URL(Avatar.src, Astro.url)} />
+<meta property="twitter:image:alt" content={NAME + " avatar"} />
