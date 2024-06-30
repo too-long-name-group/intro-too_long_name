@@ -3,4 +3,5 @@
 
 export const NAME = "too_long_name";
 export const SITE_TITLE_DEFAULT = "too_long_name 的主页";
-export const SITE_DESCRIPTION = "Furry, Developer, Gamer, 🏳️‍🌈";
+export const SITE_DESCRIPTION =
+  "too_long_name, A Furry (wolf), Developer and Gamer";
