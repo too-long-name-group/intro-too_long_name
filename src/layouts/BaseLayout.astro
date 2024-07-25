@@ -3,8 +3,6 @@ interface Props {
   title?: string;
 }
 
-import { ViewTransitions } from "astro:transitions";
-
 import { SITE_TITLE_DEFAULT } from "../consts";
 
 import Avatar from "../components/Avatar.astro";
@@ -21,8 +19,6 @@ const { title = SITE_TITLE_DEFAULT } = Astro.props;
     <title>{title}</title>
 
     <Meta />
-
-    <ViewTransitions />
   </head>
   <body class="bg-[#1F2935]">
     <main
