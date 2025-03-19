@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+@plugin "@iconify/tailwind4" {
+  prefixes: mdi, ant-design, fa6-brands;
+}
