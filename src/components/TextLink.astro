@@ -9,10 +9,10 @@ const { href, text } = Astro.props;
 
 {
   href ? (
-    <a href={href} class="text-sm text-[#E8D5B7] lg:text-2xl">
+    <a href={href} class="text-secondary-500 text-sm lg:text-2xl">
       {text}
     </a>
   ) : (
-    <p class="inline text-sm text-[#E8D5B7] lg:text-2xl">{text}</p>
+    <p class="text-secondary-500 inline text-sm lg:text-2xl">{text}</p>
   )
 }

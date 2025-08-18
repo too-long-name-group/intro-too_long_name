@@ -1,6 +1,4 @@
 ---
-import { Icon } from "astro-icon/components";
-
 interface Props {
   icon: string;
   color?: string;
@@ -17,8 +15,9 @@ const target = newWindow ? "_blank" : "_self";
 <a
   href={href}
   target={target}
-  class="grid grid-flow-col items-center gap-x-2 rounded-full bg-[#2C3D48]/20 px-3 py-2 backdrop-blur-xl"
+  class="grid grid-flow-col items-center gap-x-2 rounded-full bg-primary-200/20 px-3 py-2 backdrop-blur-xl transition duration-300 ease-in-out hover:bg-primary-200/40 "
 >
-  <Icon class="size-8 text-gray-200" name={icon} class:list={color} />
+  <span class:list={["iconify", `${icon}`, color]} class="size-8 text-gray-200"
+  ></span>
   <span class="text-gray-200">{text}</span>
 </a>

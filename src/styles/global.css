@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+@plugin "@iconify/tailwind4" {
+  prefixes: mdi, ant-design, fa6-brands;
+}
+
+@theme {
+  --color-primary-500: #0e2431;
+  --color-primary-200: #2c3d48;
+  --color-secondary-500: #e8d5b7;
+  --color-tertiary-500: #fc3a52;
+  --color-quaternary-500: #f9b248;
+}
