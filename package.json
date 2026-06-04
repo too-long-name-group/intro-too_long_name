@@ -10,10 +10,10 @@
     "format": "prettier --write ./src"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.7.2",
-    "@tailwindcss/vite": "^4.2.4",
-    "astro": "^6.2.2",
-    "tailwindcss": "^4.2.4"
+    "@astrojs/sitemap": "^3.7.3",
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "^6.4.4",
+    "tailwindcss": "^4.3.0"
   },
   "devDependencies": {
     "@iconify/tailwind4": "^1.2.3",
@@ -23,6 +23,6 @@
     "@iconify-json/ant-design": "^1.2.5",
     "@iconify-json/fa6-brands": "^1.2.6",
     "@iconify-json/mdi": "^1.2.3",
-    "@iconify-json/vscode-icons": "^1.2.48"
+    "@iconify-json/vscode-icons": "^1.2.53"
   }
 }
